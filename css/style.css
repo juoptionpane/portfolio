@@ -1,0 +1,501 @@
+/* HEADER */
+.header {
+	border-top: 6px solid #3d2a39;									  /* purple top bar */
+}
+
+/* NAV TOGGLE */
+#nav-toggle {															/* MOBILE: shows the menu */
+	border-bottom-left-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	position: fixed;
+	z-index: 15;
+	display: none;
+	background: #3d2a39;
+	padding: 15px;
+	top: 0;
+	right: 0;
+	transition: all .4s ease;
+	-webkit-transition: all .4s ease;
+}
+#nav-toggle span {														/* MOBILE: 3 menu bars - <span> */
+	border-radius: 1px;
+	height: 2px;
+	width: 30px;
+	display: block;
+	background: #fff;
+	-webkit-border-radius: 1px;
+	transition: all .4s ease;
+	-webkit-transition: all .4s ease;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+}
+#nav-toggle span:nth-child(2) {											/* MOBILE: separates the 3 menu bars - <span> */
+	margin: 6px 0;
+}
+#nav-toggle.active span:nth-child(1) {									/* MOBILE: turns the 3 menu bars into X - <span> */
+	transform: rotate(45deg) translate3d(6px,6px,0);					/* .active is what makes it work, by jquery */
+	-webkit-transform: rotate(45deg) translate3d(6px,6px,0);
+}
+#nav-toggle.active span:nth-child(2) {
+	opacity: 0;
+}
+#nav-toggle.active span:nth-child(3) {
+	transform: rotate(-45deg) translate3d(6px,-5px,0);
+	-webkit-transform: rotate(-45deg) translate3d(6px,-5px,0);
+}
+
+/* HEADER */
+.header-logo {															/* stylize the logo */
+	width: 180px;
+	padding: 22px 0;
+	float: left;
+}
+
+.header-nav {															/* navigation menu */
+	float: right;
+	padding: 25px 0;
+}
+.header-nav ul li {
+	display: inline-block;
+	margin: 0 3px;
+	position: relative;
+}
+.header-nav ul li a {
+	color: #3d2a39;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 0.875rem;	/*14/16 = 0.875*/
+}
+.header-nav ul li a:hover {
+	color: #f4b733;
+}
+.header-nav ul li a.active {
+	color: #f4b733;
+}
+
+.header-social {														/* MOBILE: social icons */
+	text-align: center;
+	margin: 20px 0;
+	display: none;														/* make disappear from desktop and mobile, so put the .header-social on @media */
+}
+.header-social a {
+	color: #ccc;
+	font-size: 2rem;
+	margin: 0 10px;
+}
+.header-social a:hover {
+	color: #f4b733;
+}
+
+/* HOME */
+
+
+
+/* ABOUT */
+.about {
+	background: #f5f5f5;
+	padding: 50px 0;
+}
+.about-photo {
+	overflow: hidden;
+    float: left;
+	margin-right: 20px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.about-info {
+	font-family: 'Open Sans', sans-serif;
+	color: #50384b;
+	text-align: justify;
+	padding: 20px 0;
+}
+.about-more {
+	text-align: center;
+	padding-top: 25px;
+}
+.about-more a {
+	color: #fff;
+	font-size: 0.875rem;
+	background: #f4b733;
+	padding: 3px 10px;
+}
+.about-more a:hover {
+	background: #c09029;
+}
+
+/* INFO */
+/* Modal */
+.info-profile-photo {
+	height: 320px;
+	overflow: hidden;
+	text-align: center;
+}
+.info-profile-photo img {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.info-profile-social {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.info-profile-social a {
+	color: #50384b;
+	font-size: 2rem;
+	margin: 0 10px;
+}
+.info-profile-social a:hover {
+	color: #f4b733;
+}
+
+/* SKILLS */
+.skills {
+	background: #f5f5f5;
+	padding: 50px 0 0;
+}
+.skills-info p {
+	margin-bottom: 20px;
+}
+.skills-progress {
+	padding-left: 650px;
+	margin-top: -288px;
+}
+.skills-progress span {
+	float: right;
+}
+.skills-progress li {
+	margin-bottom: 10px;
+}
+.skills-progress li div {
+	background: #ccc;
+	height: 13px;
+	position: relative;
+}
+.skills-progress li div span {
+	background: #ffd67d;
+	height: 100%;
+	position: absolute;
+	width: 1%;
+}
+
+/* PORTFOLIO */
+.portfolio-nav {
+	text-align: center;
+	margin: 10px 0;
+}
+.portfolio-nav li {
+	display: inline-block;
+	margin: 0 5px 10px 5px;
+}
+.portfolio-nav li a {
+	color: #50384b;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.125rem;
+	text-transform: uppercase;
+	display: block;
+	padding: 2px 10px;
+	border: 2px solid #50384b;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.portfolio-nav li a:hover {
+	color: #f4b733;
+	border: 2px solid #f4b733;
+}
+.portfolio-nav li a.active {											/* when you enter the site, the first link is already marked */
+	color: #c09029;
+	border: 2px solid #c09029;
+}
+
+.portfolio {
+	float: left;
+	width: 100%;
+	position: relative;
+	display: none;
+}
+.portfolio.visible {													/* like .active, but with the image categories */
+	display: block;
+	animation: animaPortfolio .7s ease;
+	-webkit-animation: animaPortfolio .7s ease;
+}
+@keyframes animaPortfolio {												/* animation block */
+	0% {
+		transform: scale(.5);
+		-webkit-transform: scale(.5);
+	}
+	100% {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+}
+.portfolio img {
+	display: block; 													/* remove spacing between images */
+}
+.portfolio-hover {
+	z-index: 1;															/* border on the hover over the image */
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(83, 58, 78, .9);
+	color: #fff;
+	text-align: center;
+	transition: all 300ms ease-in-out;									/* hover effect on the image */
+	-webkit-transition: all 300ms ease-in-out;
+	box-shadow: 0 0 0 10px rgba(255, 255, 255, .8);					  /* border on the hover over the image */
+}
+.portfolio-hover > div {												/* > makes style for the first div inside it */
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); 									/* center block horizontally and vertically */
+	-webkit-transform: translate(-50%, -50%);
+}
+.portfolio-hover strong {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+.portfolio-hover label {
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.portfolio-hover a {
+	font-size: 4rem;
+	color: #fff;
+	line-height: 1;
+}
+.portfolio-hover a:hover {
+	color: #f4b733;
+}
+.portfolio-hover a i {
+	line-height: 1;
+}
+.portfolio:hover .portfolio-hover  {									/* show the hover when pass the mouse over the main block */
+	opacity: 1;
+}
+
+/* CONTACT */
+.contact {
+	background: #f5f5f5;
+	padding: 50px 0;
+}
+.contact-info {
+	text-align: center;
+}
+.contact-social {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.contact-social a {
+	color: #50384b;
+	font-size: 2rem;
+	margin: 0 10px;
+}
+.contact-social a:hover {
+	color: #f4b733;
+}
+
+/* FOOTER */
+.footer {
+	background: #3d2a39;
+	padding: 20px;
+	margin-top: 80px;
+	color: #fff;
+	text-align: center;
+}
+
+
+
+
+
+/* BREAKPOINTS
+==================================================
+MAX-WIDTH */
+
+@media (max-width: 959.9px) {											/* MOBILE: dependent menu, appears up to 960px */
+	#nav-toggle, .header-social {
+		display: block;
+	}
+	
+	.header {															/* MOBILE: stylize header */
+		height: 58px;
+	}
+
+	#carousel_principal {												/* Carousel principal */
+		height: calc(100% - 58px);
+	}
+
+	.header-logo {														/* MOBILE: stylize logo */
+		max-width: 180px;
+		width: 60%;
+		padding: 12px 0;
+	}
+
+	.header-collapse {													/* MOBILE: stylize menu */
+		overflow-y: auto;
+		position: fixed;
+		background: rgba(83, 58, 78, .96);
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		padding: 15px;
+		top: -100%;
+		left: 0;
+		transition: top .4s ease;
+		-webkit-transition: top .4s ease;
+	}
+	.header-collapse.active {											/* MOBILE: menu disappears from the screen */
+		top: 0%;
+	}
+
+	.header-nav {
+		padding: 70px 0;
+		float: none;
+	}
+	.header-nav ul li {													/* MOBILE: centers the text within the menu */
+		width: 100%;
+		text-align: center;
+		padding: 5px 0;
+	}
+	.header-nav ul li a {												/* MOBILE: stylizes text within the menu */
+		color: #fff;
+		font-size: 1.4rem;
+	}
+
+	/* ABOUT */
+	.about-photo {
+		margin-bottom: 20px;
+	}
+
+	/* SKILLS */
+	.skills-progress {
+		padding: 250px 0 50px;
+	}
+}
+
+
+
+
+
+/* (Media Query)
+==================================================
+MIN-WIDTH */
+@media (min-width: 667px) {
+	/* PORTFOLIO */
+	.portfolio {
+		width: calc(100% / 2);
+	}
+}
+
+@media (min-width: 768px) {
+	/* MODAL */
+	.info-body {
+		padding: 0 20px;
+	}
+	.info-profile .info-cols {
+		float: left;
+		width: 40%;
+	}
+	.info-profile .info-cols:last-child {
+		float: right;
+		width: 56%;
+	}
+	
+	#carousel_principal .owl-caption {
+		padding: 30px%;
+		font-size: 1.6rem;
+	}
+	#carousel_principal .owl-caption strong {
+		font-size: 2.5rem;
+	}
+}
+
+@media (min-width: 960px) {
+	/* MODAL */
+	.info-portfolio .info-cols {
+		float: left;
+		width: 68%;
+	}
+	.info-portfolio .info-cols:last-child {
+		float: right;
+		width: 30%;
+	}
+
+	@keyframes animaHeader {											/* top menu block animation */
+		0% {
+			opacity: 0;
+			transform: translateY(-100%);
+			-webkit-transform: translateY(-100%);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0%);
+			-webkit-transform: translateY(0%);
+		}
+	}
+	.fixed {															/* fixed menu at the top */
+		position: fixed;
+		background: #fff;
+		z-index: 20;
+		animation: animaHeader .7s ease-in-out .4s backwards;
+		-webkit-animation: animaHeader .7s ease-in-out .4s backwards;
+	}
+	.header-nav {														/* top bar - orange */
+		margin-left: 2%;
+	}
+	.header-nav ul li a.active:before {
+		background: #f4b733;
+		content: "";
+		position: absolute;
+		height: 6px;
+		width: 100%;
+		top: -31px;
+		left: 0;
+	}
+
+	/* PORTFOLIO */
+	.portfolio {
+		width: calc(100% / 3);
+	}
+}
+
+@media (min-width: 1024px) {											/* orange top bar spacing */
+	.header-nav ul li {
+		margin: 0 6px;
+	}
+}
+
+@media (min-width: 1144px) {
+	.header-logo {
+		width: auto;
+	}
+	.header-nav ul li a {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.header-nav ul li {
+		margin: 0 8px;
+	}
+
+	/* PORTFOLIO */
+	.portfolio {
+		width: calc(100% / 4);
+	}
+}
+
+@media (min-width: 1366px) {
+	/* PORTFOLIO */
+	.portfolio {
+		width: calc(100% / 5);
+	}
+}

@@ -1,0 +1,76 @@
+/* CAROUSEL
+============================== */
+
+.owl-carousel {
+	float: left;
+}
+
+.owl-carousel,
+.owl-stage-outer,
+.owl-stage,
+.owl-item,
+.owl-lazy {
+	height: 100%;
+	position: relative;
+}
+
+.owl-lazy {
+	padding: 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center; 
+}
+
+.owl-prev,											/* next and preview button */
+.owl-next {
+	position: absolute;
+	background: rgba(0,0,0,.5);
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	top: 50%;
+	left: 0;
+	padding: 20px 12px;
+	color: #fff;
+}
+
+#carousel_principal {								/* remove header navigation bar, from the main carousel */
+	height: calc(100% - 80px);
+}
+
+/* CAROUSEL PORTFOLIO */
+.carousel_portfolio {
+	height: 55vh;
+	max-height: 400px;
+	min-height: 300px;
+	margin-bottom: 30px;
+}
+
+.carousel_portfolio .owl-prev,						/* next and preview button */
+.carousel_portfolio .owl-next {
+	text-align: center;
+	padding: 0;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	transform: none;								/* remove the 'transform' and 'top' for the arrow to touch down */
+	top: auto;
+	bottom: 0;
+	left: 0;
+	border-right: 3px solid #fff;
+	border-radius: 0;
+}
+.carousel_portfolio .owl-next {
+	left: 35px;
+}
+.carousel_portfolio .owl-caption {
+	background: rgba(0,0,0,.7);
+	position: absolute;
+	font-size: 0.8125rem;
+	color: #fff;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+	bottom: 0;
+	left: 70px;
+	width: calc(100% - 70px);						/* the size of each arrow is 35px, and the second +35, so adding = 70, and you have to remove */
+}
